@@ -224,7 +224,7 @@ function DashboardPage() {
               <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
                 <div className="flex items-center gap-3">
                   <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-surface-elevated">
-                    <Github className="h-5 w-5" />
+                    <GitBranch className="h-5 w-5" />
                   </div>
                   <div>
                     <p className="text-sm font-medium">Deployment Info</p>
