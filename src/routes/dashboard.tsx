@@ -8,7 +8,7 @@ import {
   HelpCircle,
   Search,
   MoreHorizontal,
-  Github,
+  GitBranch,
   CheckCircle2,
   Plus,
   ArrowUpRight,
