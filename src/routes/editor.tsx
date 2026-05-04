@@ -60,16 +60,16 @@ function EditorPage() {
   return (
     <div className="flex h-screen flex-col bg-background text-foreground">
       {/* Top bar */}
-      <header className="sticky top-0 z-30 flex h-14 items-center justify-between border-b border-border/60 bg-background/80 px-6 backdrop-blur-xl">
+      <header className="sticky top-0 z-30 flex h-16 items-center justify-between border-b border-border bg-background/85 px-8 backdrop-blur-xl">
         <LodeLogo />
-        <div className="flex items-center gap-3">
-          <span className="text-sm text-muted-foreground">Step 2 of 5</span>
+        <div className="flex items-center gap-4">
+          <span className="text-sm font-medium text-foreground/80">Step 2 of 5</span>
           <div className="flex items-center gap-1.5">
             {[0, 1, 2, 3, 4].map((i) => (
               <span
                 key={i}
                 className={`h-1.5 rounded-full transition-all ${
-                  i <= 1 ? "w-6 bg-brand" : "w-1.5 bg-border"
+                  i <= 1 ? "w-8 bg-brand" : "w-2 bg-border"
                 }`}
               />
             ))}
@@ -77,7 +77,7 @@ function EditorPage() {
         </div>
         <Link
           to="/dashboard"
-          className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+          className="rounded-lg border border-border bg-surface px-4 py-2 text-sm font-medium text-foreground/90 hover:bg-surface-elevated hover:text-foreground transition-colors"
         >
           Exit
         </Link>
