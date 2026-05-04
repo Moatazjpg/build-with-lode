@@ -70,10 +70,10 @@ function LandingPage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Nav */}
-      <header className="sticky top-0 z-40 border-b border-border/60 bg-background/70 backdrop-blur-xl">
-        <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
+      <header className="sticky top-0 z-40 border-b border-border bg-background/75 backdrop-blur-xl">
+        <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-6">
           <LodeLogo />
-          <nav className="hidden items-center gap-8 text-sm text-muted-foreground md:flex">
+          <nav className="hidden items-center gap-8 text-sm font-medium text-foreground/70 md:flex">
             <a href="#features" className="hover:text-foreground transition-colors">Features</a>
             <a href="#steps" className="hover:text-foreground transition-colors">How it works</a>
             <a href="#pricing" className="hover:text-foreground transition-colors">Pricing</a>

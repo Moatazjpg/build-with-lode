@@ -49,7 +49,7 @@ function DashboardPage() {
     <div className="flex h-screen bg-background text-foreground">
       {/* Sidebar */}
       <aside className="flex w-60 shrink-0 flex-col border-r border-border/60 bg-sidebar">
-        <div className="flex h-14 items-center px-5 border-b border-border/60">
+        <div className="flex h-20 items-center px-5 border-b border-border">
           <LodeLogo />
         </div>
         <nav className="flex-1 space-y-1 px-3 py-4">
@@ -82,7 +82,7 @@ function DashboardPage() {
       {/* Main */}
       <div className="flex flex-1 flex-col overflow-hidden">
         {/* Header */}
-        <header className="flex h-16 items-center justify-between border-b border-border/60 px-8">
+        <header className="flex h-20 items-center justify-between border-b border-border px-8">
           <div>
             <h1 className="text-2xl font-bold tracking-tight">My Projects</h1>
             <p className="text-xs text-muted-foreground">

@@ -72,11 +72,11 @@
   --radius: 0.75rem;
 
   /* Dark by default — Lode is a dark product */
-  --background: oklch(0.18 0.04 265);          /* slate-950 ~ #0F172A */
-  --foreground: oklch(0.98 0.005 250);          /* slate-50 ~ #F8FAFC */
+  --background: oklch(0.16 0.04 265);          /* deeper slate for stronger contrast */
+  --foreground: oklch(1 0 0);                   /* pure white text */
 
-  --surface: oklch(0.22 0.04 264);              /* slate-900 panel */
-  --surface-elevated: oklch(0.27 0.04 263);     /* slate-800 card */
+  --surface: oklch(0.21 0.04 264);              /* panel */
+  --surface-elevated: oklch(0.27 0.04 263);     /* card */
 
   --card: oklch(0.22 0.04 264);
   --card-foreground: oklch(0.98 0.005 250);
@@ -95,7 +95,7 @@
   --secondary-foreground: oklch(0.98 0.005 250);
 
   --muted: oklch(0.27 0.04 263);
-  --muted-foreground: oklch(0.72 0.02 256);
+  --muted-foreground: oklch(0.82 0.02 256);
 
   --accent: oklch(0.55 0.25 290);
   --accent-foreground: oklch(0.99 0.005 250);
@@ -103,8 +103,8 @@
   --destructive: oklch(0.62 0.22 25);
   --destructive-foreground: oklch(0.99 0.005 250);
 
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 12%);
+  --border: oklch(1 0 0 / 14%);
+  --input: oklch(1 0 0 / 16%);
   --ring: oklch(0.55 0.22 264);
 
   --chart-1: oklch(0.75 0.13 203);

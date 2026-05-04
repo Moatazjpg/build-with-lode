@@ -1,39 +1,35 @@
+import logoMark from "@/assets/lode-logo.png";
+
 export function LodeLogo({
   className = "",
   variant = "default",
 }: {
   className?: string;
-  variant?: "default" | "compact";
+  variant?: "default" | "compact" | "large";
 }) {
-  const size = variant === "compact" ? 24 : 28;
+  const sizeMap = {
+    compact: { mark: 32, text: "text-xl" },
+    default: { mark: 40, text: "text-2xl" },
+    large: { mark: 56, text: "text-3xl" },
+  } as const;
+  const { mark, text } = sizeMap[variant];
 
   return (
     <div className={`flex items-center gap-2.5 ${className}`}>
-      <svg
-        width={size}
-        height={size}
-        viewBox="0 0 40 40"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        aria-hidden="true"
+      <img
+        src={logoMark}
+        alt="Lode logo"
+        width={mark}
+        height={mark}
+        className="shrink-0 select-none"
+        style={{ width: mark, height: mark }}
+        draggable={false}
+      />
+      <span
+        className={`font-extrabold tracking-tight leading-none text-foreground ${text}`}
       >
-        <defs>
-          <linearGradient id="lode-mark-grad" x1="4" y1="6" x2="36" y2="34" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stopColor="#06B6D4" />
-            <stop offset="100%" stopColor="#7C3AED" />
-          </linearGradient>
-        </defs>
-        {/* Speech bubble */}
-        <path
-          d="M8 6h20a6 6 0 0 1 6 6v12a6 6 0 0 1-6 6H18l-7 6v-6H8a6 6 0 0 1-6-6V12a6 6 0 0 1 6-6Z"
-          fill="url(#lode-mark-grad)"
-        />
-        {/* Three dots */}
-        <circle cx="13" cy="18" r="2.2" fill="white" />
-        <circle cx="20" cy="18" r="2.2" fill="white" />
-        <circle cx="27" cy="18" r="2.2" fill="white" />
-      </svg>
-      <span className="text-lg font-extrabold tracking-tight leading-none">LODE</span>
+        LODE
+      </span>
     </div>
   );
 }
