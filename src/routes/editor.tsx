@@ -205,27 +205,35 @@ function EditorPage() {
             </div>
           </div>
 
-          <div className="flex flex-1 items-center justify-center overflow-auto p-8">
+          <div className="flex flex-1 items-center justify-center overflow-auto p-10">
             <div
-              className={`flex flex-col rounded-2xl border border-border bg-surface shadow-elevated transition-all ${
-                device === "desktop" ? "w-full max-w-4xl" : "w-[380px]"
+              className={`flex flex-col overflow-hidden rounded-2xl border border-border bg-surface shadow-elevated ring-1 ring-white/5 transition-all ${
+                device === "desktop" ? "w-full max-w-5xl" : "w-[400px]"
               }`}
             >
               {/* Browser chrome */}
-              <div className="flex items-center gap-2 border-b border-border px-4 py-3">
-                <span className="h-2.5 w-2.5 rounded-full bg-red-500/80" />
-                <span className="h-2.5 w-2.5 rounded-full bg-yellow-500/80" />
-                <span className="h-2.5 w-2.5 rounded-full bg-green-500/80" />
-                <div className="ml-3 flex-1 rounded-md border border-border bg-background px-3 py-1 text-[11px] text-muted-foreground">
+              <div className="flex items-center gap-2 border-b border-border bg-surface-elevated/60 px-4 py-3">
+                <span className="h-3 w-3 rounded-full bg-red-500/90" />
+                <span className="h-3 w-3 rounded-full bg-yellow-500/90" />
+                <span className="h-3 w-3 rounded-full bg-green-500/90" />
+                <div className="ml-4 flex flex-1 items-center gap-2 rounded-md border border-border bg-background/80 px-3 py-1.5 text-xs text-muted-foreground">
+                  <span className="h-1.5 w-1.5 rounded-full bg-cyan-accent" />
                   https://lode.ai/your-site
                 </div>
               </div>
               {/* Empty preview */}
-              <div className="flex min-h-[420px] flex-1 items-center justify-center px-6 py-16 text-center">
-                <p className="text-2xl font-medium text-muted-foreground/70 md:text-3xl">
+              <div className="relative flex min-h-[520px] flex-1 items-center justify-center overflow-hidden bg-background px-6 py-20 text-center">
+                <div
+                  className="pointer-events-none absolute inset-0 opacity-50"
+                  style={{
+                    background:
+                      "radial-gradient(60% 50% at 50% 30%, color-mix(in oklab, var(--brand) 18%, transparent), transparent 70%)",
+                  }}
+                />
+                <p className="relative text-2xl font-semibold text-foreground/60 md:text-3xl">
                   Your website preview
                   <br />
-                  will appear here
+                  <span className="text-foreground/40">will appear here</span>
                 </p>
               </div>
             </div>
