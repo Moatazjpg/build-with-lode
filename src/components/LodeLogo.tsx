@@ -8,9 +8,9 @@ export function LodeLogo({
   variant?: "default" | "compact" | "large";
 }) {
   const sizeMap = {
-    compact: 36,
-    default: 44,
-    large: 64,
+    compact: 28,
+    default: 32,
+    large: 40,
   } as const;
   const mark = sizeMap[variant];
 
