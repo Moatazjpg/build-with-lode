@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { LodeLogo } from "@/components/LodeLogo";
-import { Rocket, Wand2, Globe, BarChart3, Layers, Sparkles, ArrowRight, Check } from "lucide-react";
+import { Rocket, Wand2, Globe, BarChart3, Layers, Sparkles, ArrowRight, Check, TrendingUp, Twitter, Linkedin, ShoppingCart } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -78,9 +78,20 @@ function LandingPage() {
             <a href="#steps" className="hover:text-foreground transition-colors">How it works</a>
             <a href="#pricing" className="hover:text-foreground transition-colors">Pricing</a>
           </nav>
-          <button className="rounded-lg border border-border bg-surface px-4 py-2 text-sm font-medium hover:bg-surface-elevated transition-colors">
-            Log in
-          </button>
+          <div className="flex items-center gap-2">
+            <Link
+              to="/login"
+              className="rounded-lg px-4 py-2 text-sm font-medium text-foreground/80 hover:text-foreground transition-colors"
+            >
+              Log in
+            </Link>
+            <Link
+              to="/signup"
+              className="rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
+            >
+              Sign up
+            </Link>
+          </div>
         </div>
       </header>
 
