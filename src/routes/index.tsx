@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { LodeLogo } from "@/components/LodeLogo";
-import { Rocket, Wand2, Globe, BarChart3, Layers, Sparkles, ArrowRight, Check, TrendingUp, ShoppingCart } from "lucide-react";
+import { Rocket, Wand2, Globe, BarChart3, Layers, Sparkles, ArrowRight, Check, TrendingUp } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
