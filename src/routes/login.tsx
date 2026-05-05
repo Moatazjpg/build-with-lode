@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { LodeLogo } from "@/components/LodeLogo";
-import { Mail, Lock, ArrowRight, Github } from "lucide-react";
+import { Mail, Lock, ArrowRight, Github as GithubIcon } from "lucide-react";
 
 export const Route = createFileRoute("/login")({
   head: () => ({
