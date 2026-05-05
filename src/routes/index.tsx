@@ -300,3 +300,147 @@ function LandingPage() {
     </div>
   );
 }
+
+function FeatureMock({ kind }: { kind: "live" | "pages" | "domain" | "analytics" }) {
+  if (kind === "live") {
+    return (
+      <div className="overflow-hidden rounded-xl border border-border bg-background/80 shadow-elevated ring-1 ring-white/5">
+        <div className="flex items-center gap-1.5 border-b border-border bg-surface-elevated/60 px-3 py-2">
+          <span className="h-2 w-2 rounded-full bg-red-500/90" />
+          <span className="h-2 w-2 rounded-full bg-yellow-500/90" />
+          <span className="h-2 w-2 rounded-full bg-green-500/90" />
+          <span className="ml-2 truncate text-[10px] text-muted-foreground">lode.ai/preview</span>
+        </div>
+        <div className="grid grid-cols-5">
+          <div className="col-span-2 border-r border-border bg-surface/40 p-3">
+            <div className="flex items-start gap-1.5">
+              <span className="mt-1 h-4 w-4 shrink-0 rounded-full bg-violet-accent/30" />
+              <div className="space-y-1">
+                <div className="h-1.5 w-20 rounded bg-muted" />
+                <div className="h-1.5 w-16 rounded bg-muted/70" />
+              </div>
+            </div>
+            <div className="mt-3 ml-auto w-fit rounded-md bg-primary/80 px-2 py-1">
+              <div className="h-1.5 w-16 rounded bg-white/60" />
+            </div>
+            <div className="mt-3 flex items-center gap-1.5 text-[9px] text-cyan-accent">
+              <span className="relative flex h-1.5 w-1.5">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan-accent opacity-75" />
+                <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-cyan-accent" />
+              </span>
+              Building...
+            </div>
+          </div>
+          <div className="col-span-3 p-3">
+            <div className="h-2 w-2/3 rounded bg-foreground/80" />
+            <div className="mt-1.5 h-1.5 w-full rounded bg-muted/60" />
+            <div className="mt-1 h-1.5 w-4/5 rounded bg-muted/40" />
+            <div className="mt-3 h-12 rounded-md bg-gradient-to-br from-brand/40 to-violet-accent/40" />
+            <div className="mt-2 flex gap-1.5">
+              <div className="h-5 w-12 rounded bg-primary/80" />
+              <div className="h-5 w-12 rounded border border-border" />
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (kind === "pages") {
+    const pages = [
+      { name: "Home", path: "/", active: true },
+      { name: "About", path: "/about" },
+      { name: "Pricing", path: "/pricing" },
+      { name: "Blog", path: "/blog" },
+      { name: "Contact", path: "/contact" },
+    ];
+    return (
+      <div className="overflow-hidden rounded-xl border border-border bg-background/80">
+        <div className="flex items-center justify-between border-b border-border bg-surface-elevated/60 px-3 py-2">
+          <div className="flex items-center gap-1.5">
+            <Globe className="h-3 w-3 text-cyan-accent" />
+            <span className="text-[10px] font-medium text-foreground/90">Sitemap</span>
+          </div>
+          <span className="text-[10px] text-muted-foreground">5 pages · auto-linked</span>
+        </div>
+        <ul className="divide-y divide-border/60">
+          {pages.map((p) => (
+            <li
+              key={p.path}
+              className={`flex items-center justify-between px-3 py-2 text-[11px] ${
+                p.active ? "bg-brand/10" : ""
+              }`}
+            >
+              <div className="flex items-center gap-2">
+                <span className={`h-1.5 w-1.5 rounded-full ${p.active ? "bg-brand" : "bg-muted-foreground/40"}`} />
+                <span className="font-medium text-foreground/90">{p.name}</span>
+                <span className="text-muted-foreground">{p.path}</span>
+              </div>
+              <span className="rounded bg-cyan-accent/10 px-1.5 py-0.5 text-[9px] font-medium text-cyan-accent">
+                SEO ✓
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
+  }
+
+  if (kind === "domain") {
+    return (
+      <div className="overflow-hidden rounded-xl border border-border bg-background/80 p-4">
+        <div className="flex items-center gap-2 rounded-md border border-border bg-surface-elevated/70 px-3 py-2">
+          <span className="text-cyan-accent">🔒</span>
+          <span className="text-xs font-mono text-foreground/90">https://</span>
+          <span className="flex-1 truncate text-xs font-mono font-semibold text-foreground">acme.com</span>
+          <span className="rounded-full border border-cyan-accent/40 bg-cyan-accent/10 px-2 py-0.5 text-[10px] font-medium text-cyan-accent">
+            SSL active
+          </span>
+        </div>
+        <div className="mt-3 space-y-1.5">
+          {[
+            { type: "A", host: "@", value: "76.76.21.21", ok: true },
+            { type: "CNAME", host: "www", value: "lode.ai", ok: true },
+            { type: "TXT", host: "_lode", value: "verified", ok: true },
+          ].map((r) => (
+            <div key={r.type + r.host} className="flex items-center gap-2 rounded-md bg-surface/50 px-2 py-1.5 text-[10px]">
+              <span className="w-12 font-mono font-semibold text-violet-accent">{r.type}</span>
+              <span className="w-10 font-mono text-muted-foreground">{r.host}</span>
+              <span className="flex-1 truncate font-mono text-foreground/80">{r.value}</span>
+              <Check className="h-3 w-3 text-cyan-accent" />
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
+  // analytics
+  const bars = [40, 55, 35, 70, 60, 85, 75, 90, 80, 95, 70, 88];
+  return (
+    <div className="overflow-hidden rounded-xl border border-border bg-background/80 p-4">
+      <div className="flex items-end justify-between">
+        <div>
+          <p className="text-[10px] uppercase tracking-wider text-muted-foreground">Visitors today</p>
+          <p className="mt-0.5 text-2xl font-bold text-foreground">12,847</p>
+        </div>
+        <span className="flex items-center gap-1 rounded-full bg-cyan-accent/10 px-2 py-0.5 text-[10px] font-medium text-cyan-accent">
+          <TrendingUp className="h-3 w-3" />
+          +12.4%
+        </span>
+      </div>
+      <div className="mt-4 flex h-16 items-end gap-1">
+        {bars.map((h, i) => (
+          <div
+            key={i}
+            className="flex-1 rounded-t bg-gradient-to-t from-brand/60 to-cyan-accent/80"
+            style={{ height: `${h}%` }}
+          />
+        ))}
+      </div>
+      <div className="mt-3 flex items-center justify-between text-[10px] text-muted-foreground">
+        <span>Mon</span><span>Wed</span><span>Fri</span><span>Sun</span>
+      </div>
+    </div>
+  );
+}
