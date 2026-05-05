@@ -305,20 +305,111 @@ function LandingPage() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* Pricing */}
       <section id="pricing" className="border-b border-border/60">
-        <div className="mx-auto max-w-4xl px-6 py-24 text-center">
-          <h2 className="text-4xl font-bold md:text-5xl">Start building now</h2>
-          <p className="mx-auto mt-4 max-w-md text-muted-foreground">
-            Free to try. No credit card required. Publish to Lode for free, forever.
-          </p>
-          <Link
-            to="/editor"
-            className="mt-8 inline-flex items-center gap-2 rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-glow transition-all hover:-translate-y-0.5 hover:bg-primary/90"
-          >
-            Get started
-            <ArrowRight className="h-4 w-4" />
-          </Link>
+        <div className="mx-auto max-w-6xl px-6 py-24">
+          <div className="text-center">
+            <p className="text-xs uppercase tracking-[0.2em] text-cyan-accent">Pricing</p>
+            <h2 className="mt-3 text-4xl font-bold md:text-5xl">Simple plans that scale with you</h2>
+            <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
+              Start free. Upgrade when you're ready to publish to your own domain or unlock advanced AI.
+            </p>
+          </div>
+
+          <div className="mt-14 grid gap-6 md:grid-cols-3">
+            {[
+              {
+                name: "Starter",
+                price: "$0",
+                period: "/forever",
+                tagline: "For exploring and prototyping.",
+                cta: "Get started",
+                features: [
+                  "1 project",
+                  "Lode subdomain (.lode.app)",
+                  "Up to 5 pages",
+                  "Community support",
+                  "Basic AI generation",
+                ],
+              },
+              {
+                name: "Pro",
+                price: "$19",
+                period: "/month",
+                tagline: "For founders and indie builders.",
+                cta: "Start 14-day trial",
+                highlight: true,
+                features: [
+                  "10 projects",
+                  "Custom domains + SSL",
+                  "Unlimited pages",
+                  "Built-in analytics",
+                  "Advanced AI (GPT-class)",
+                  "Email support",
+                ],
+              },
+              {
+                name: "Team",
+                price: "$49",
+                period: "/month",
+                tagline: "For agencies and teams shipping at scale.",
+                cta: "Contact sales",
+                features: [
+                  "Unlimited projects",
+                  "Up to 10 collaborators",
+                  "Roles & permissions",
+                  "Priority AI queue",
+                  "SSO & audit logs",
+                  "24/7 priority support",
+                ],
+              },
+            ].map((plan) => (
+              <div
+                key={plan.name}
+                className={
+                  plan.highlight
+                    ? "relative rounded-2xl border border-brand/50 bg-gradient-to-b from-brand/10 via-surface/60 to-surface/60 p-8 shadow-glow ring-1 ring-brand/30"
+                    : "relative rounded-2xl border border-border bg-surface/60 p-8 transition-colors hover:border-brand/30 hover:bg-surface-elevated"
+                }
+              >
+                {plan.highlight && (
+                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-brand to-violet-accent px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-white shadow">
+                    Most popular
+                  </span>
+                )}
+                <h3 className="text-lg font-semibold">{plan.name}</h3>
+                <p className="mt-1 text-sm text-muted-foreground">{plan.tagline}</p>
+                <div className="mt-6 flex items-baseline gap-1">
+                  <span className="text-4xl font-extrabold tracking-tight">{plan.price}</span>
+                  <span className="text-sm text-muted-foreground">{plan.period}</span>
+                </div>
+                <Link
+                  to="/signup"
+                  className={
+                    plan.highlight
+                      ? "mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-all hover:-translate-y-0.5 hover:bg-primary/90"
+                      : "mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-border bg-surface px-5 py-2.5 text-sm font-semibold text-foreground transition-colors hover:bg-surface-elevated"
+                  }
+                >
+                  {plan.cta}
+                </Link>
+                <ul className="mt-7 space-y-2.5">
+                  {plan.features.map((f) => (
+                    <li key={f} className="flex items-start gap-2 text-sm text-foreground/85">
+                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-cyan-accent" />
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-muted-foreground">
+            <span className="inline-flex items-center gap-1.5"><Check className="h-3.5 w-3.5 text-cyan-accent" />Cancel anytime</span>
+            <span className="inline-flex items-center gap-1.5"><Check className="h-3.5 w-3.5 text-cyan-accent" />Secure payments by Stripe</span>
+            <span className="inline-flex items-center gap-1.5"><TrendingUp className="h-3.5 w-3.5 text-cyan-accent" />Switch plans anytime</span>
+          </div>
         </div>
       </section>
 
