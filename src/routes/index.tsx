@@ -101,47 +101,124 @@ function LandingPage() {
 
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-border/60">
+        {/* Backdrop layers */}
         <div
-          className="pointer-events-none absolute inset-0 opacity-60"
+          className="pointer-events-none absolute inset-0 opacity-70"
           style={{
             background:
-              "radial-gradient(60% 50% at 50% 0%, color-mix(in oklab, var(--brand) 30%, transparent) 0%, transparent 70%)",
+              "radial-gradient(60% 50% at 50% 0%, color-mix(in oklab, var(--brand) 35%, transparent) 0%, transparent 70%)",
           }}
         />
         <div
-          className="pointer-events-none absolute -top-40 left-1/2 h-[500px] w-[800px] -translate-x-1/2 rounded-full opacity-30 blur-3xl"
+          className="pointer-events-none absolute -top-40 left-1/2 h-[520px] w-[900px] -translate-x-1/2 rounded-full opacity-40 blur-3xl"
           style={{ background: "linear-gradient(120deg, var(--brand), var(--violet-accent))" }}
         />
-        <div className="relative mx-auto max-w-6xl px-6 py-24 text-center md:py-32">
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-surface/60 px-3 py-1 text-xs text-muted-foreground backdrop-blur">
-            <span className="h-1.5 w-1.5 rounded-full bg-cyan-accent" />
+        {/* Subtle grid */}
+        <div
+          className="pointer-events-none absolute inset-0 opacity-[0.07]"
+          style={{
+            backgroundImage:
+              "linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)",
+            backgroundSize: "56px 56px",
+            maskImage: "radial-gradient(ellipse at 50% 0%, black 40%, transparent 75%)",
+          }}
+        />
+
+        <div className="relative mx-auto max-w-6xl px-6 pb-12 pt-24 text-center md:pt-32">
+          <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-border bg-surface/70 px-3.5 py-1.5 text-xs text-muted-foreground backdrop-blur">
+            <span className="relative flex h-1.5 w-1.5">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan-accent opacity-75" />
+              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-cyan-accent" />
+            </span>
             New — AI-native builder, now in public beta
           </div>
-          <h1 className="mx-auto max-w-3xl text-5xl font-extrabold leading-[1.05] tracking-tight md:text-7xl">
+          <h1 className="mx-auto max-w-4xl text-5xl font-extrabold leading-[1.02] tracking-tight md:text-7xl lg:text-[5.5rem]">
             Build a website
             <br />
             <span className="bg-gradient-to-r from-brand via-cyan-accent to-violet-accent bg-clip-text text-transparent">
-              in minutes.
+              just by chatting.
             </span>
           </h1>
-          <p className="mx-auto mt-6 max-w-xl text-base text-muted-foreground md:text-lg">
-            Lode is a conversational website builder. Describe your business — get a polished,
-            multi-page site that ships the moment you're ready.
+          <p className="mx-auto mt-7 max-w-xl text-base text-muted-foreground md:text-lg">
+            Lode turns a short conversation into a polished, multi-page site —
+            designed, written, and deployed in minutes.
           </p>
-          <div className="mt-10 flex items-center justify-center gap-3">
+          <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Link
               to="/editor"
-              className="group inline-flex items-center gap-2 rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-glow transition-all hover:-translate-y-0.5 hover:bg-primary/90"
+              className="group inline-flex items-center gap-2 rounded-xl bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-glow transition-all hover:-translate-y-0.5 hover:bg-primary/90"
             >
-              Get started
+              Start building free
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
             </Link>
             <Link
               to="/dashboard"
-              className="inline-flex items-center gap-2 rounded-xl border border-border bg-surface/60 px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-surface-elevated"
+              className="inline-flex items-center gap-2 rounded-xl border border-border bg-surface/60 px-7 py-3.5 text-sm font-semibold text-foreground backdrop-blur transition-colors hover:bg-surface-elevated"
             >
-              View dashboard
+              View live demo
             </Link>
+          </div>
+          <div className="mt-5 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs text-muted-foreground">
+            <span className="inline-flex items-center gap-1.5"><Check className="h-3.5 w-3.5 text-cyan-accent" />No credit card</span>
+            <span className="inline-flex items-center gap-1.5"><Check className="h-3.5 w-3.5 text-cyan-accent" />Free forever plan</span>
+            <span className="inline-flex items-center gap-1.5"><Check className="h-3.5 w-3.5 text-cyan-accent" />Publish in 1 click</span>
+          </div>
+
+          {/* Hero product preview */}
+          <div className="relative mx-auto mt-16 max-w-5xl">
+            <div
+              className="absolute -inset-6 -z-10 rounded-3xl opacity-60 blur-2xl"
+              style={{ background: "linear-gradient(120deg, var(--brand), var(--violet-accent))" }}
+            />
+            <div className="overflow-hidden rounded-2xl border border-border bg-surface/80 shadow-elevated ring-1 ring-white/10 backdrop-blur">
+              <div className="flex items-center gap-1.5 border-b border-border bg-surface-elevated/70 px-4 py-2.5">
+                <span className="h-2.5 w-2.5 rounded-full bg-red-500/90" />
+                <span className="h-2.5 w-2.5 rounded-full bg-yellow-500/90" />
+                <span className="h-2.5 w-2.5 rounded-full bg-green-500/90" />
+                <div className="mx-auto flex items-center gap-2 rounded-md border border-border bg-background/60 px-3 py-1 text-[11px] text-muted-foreground">
+                  <Globe className="h-3 w-3 text-cyan-accent" />
+                  lode.ai/editor
+                </div>
+              </div>
+              <div className="grid grid-cols-12">
+                <div className="col-span-5 border-r border-border bg-background/60 p-4">
+                  <div className="mb-3 flex items-center gap-2 text-[11px] font-medium text-muted-foreground">
+                    <Sparkles className="h-3.5 w-3.5 text-violet-accent" /> Chat with Lode
+                  </div>
+                  <div className="space-y-2.5">
+                    <div className="ml-auto w-fit max-w-[80%] rounded-lg rounded-tr-sm bg-primary/90 px-3 py-2 text-left text-[11px] text-primary-foreground">
+                      Build a landing page for my coffee roastery in Brooklyn.
+                    </div>
+                    <div className="w-fit max-w-[85%] rounded-lg rounded-tl-sm border border-border bg-surface px-3 py-2 text-left text-[11px] text-foreground/90">
+                      On it. Generating hero, menu, story & contact pages…
+                    </div>
+                    <div className="flex items-center gap-1.5 text-[10px] text-cyan-accent">
+                      <span className="relative flex h-1.5 w-1.5">
+                        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan-accent opacity-75" />
+                        <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-cyan-accent" />
+                      </span>
+                      Generating section 3 of 5…
+                    </div>
+                  </div>
+                </div>
+                <div className="col-span-7 p-4">
+                  <div className="rounded-lg bg-gradient-to-br from-amber-900/40 via-orange-900/30 to-background p-4">
+                    <div className="text-[10px] uppercase tracking-widest text-amber-300/80">Brooklyn · Est. 2019</div>
+                    <div className="mt-1 text-lg font-bold leading-tight text-foreground">Slow-roasted, small batch.</div>
+                    <div className="mt-1 text-[10px] text-foreground/70">Single-origin coffee delivered fresh from our roastery.</div>
+                    <div className="mt-3 flex gap-1.5">
+                      <div className="rounded-md bg-amber-400 px-2 py-1 text-[9px] font-semibold text-amber-950">Shop beans</div>
+                      <div className="rounded-md border border-border px-2 py-1 text-[9px] text-foreground/80">Visit café</div>
+                    </div>
+                  </div>
+                  <div className="mt-3 grid grid-cols-3 gap-2">
+                    <div className="aspect-square rounded-md bg-gradient-to-br from-amber-700/40 to-amber-900/40" />
+                    <div className="aspect-square rounded-md bg-gradient-to-br from-orange-700/40 to-amber-800/40" />
+                    <div className="aspect-square rounded-md bg-gradient-to-br from-amber-600/40 to-orange-900/40" />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Logo strip */}
