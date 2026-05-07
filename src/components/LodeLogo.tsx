@@ -16,7 +16,8 @@ export function LodeLogo({
       <img
         src={logoMark}
         alt="Lode"
-        className="h-8 w-auto shrink-0 select-none object-contain brightness-110 contrast-110 md:h-9 lg:h-10"
+        style={{ height: "150px" }}
+        className="w-auto shrink-0 select-none object-contain brightness-110 contrast-110"
         draggable={false}
       />
     </div>
