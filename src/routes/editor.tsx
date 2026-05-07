@@ -60,7 +60,7 @@ function EditorPage() {
   return (
     <div className="flex h-screen flex-col bg-background text-foreground">
       {/* Top bar */}
-      <header className="sticky top-0 z-30 flex h-16 items-center justify-between border-b border-border bg-background/85 px-8 backdrop-blur-xl">
+      <header className="sticky top-0 z-30 flex h-16 items-center justify-between border-b border-border bg-background/85 pl-6 pr-6 backdrop-blur-xl">
         <LodeLogo />
         <div className="flex items-center gap-4">
           <span className="text-sm font-medium text-foreground/80">Step 2 of 5</span>
