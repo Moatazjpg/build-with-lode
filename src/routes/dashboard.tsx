@@ -118,7 +118,7 @@ const team = [
   { name: "Sarah Chen", initials: "SC", color: "from-rose-500 to-amber-500" },
   { name: "Marco Lee", initials: "ML", color: "from-cyan-400 to-blue-600" },
   { name: "Priya Shah", initials: "PS", color: "from-violet-500 to-fuchsia-500" },
-  { name: "You", initials: "YU", color: "from-emerald-400 to-teal-600" },
+  { name: "Mehdi Karoui", initials: "MK", color: "from-emerald-400 to-teal-600" },
 ];
 
 function DashboardPage() {
