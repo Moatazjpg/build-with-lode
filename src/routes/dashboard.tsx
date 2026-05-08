@@ -597,7 +597,7 @@ function DashboardPage() {
                       <div>
                         <p className="text-sm font-medium leading-none">{m.name}</p>
                         <p className="mt-1 text-[11px] text-muted-foreground">
-                          {m.name === "You" ? "Owner" : "Editor"}
+                          {m.name === "Mehdi Karoui" ? "Owner" : "Editor"}
                         </p>
                       </div>
                     </div>
