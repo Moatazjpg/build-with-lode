@@ -238,7 +238,7 @@ function DashboardPage() {
             <div className="relative flex flex-col md:flex-row md:items-center md:justify-between gap-4">
               <div>
                 <p className="text-xs uppercase tracking-wider text-cyan-accent font-semibold">Friday, May 8</p>
-                <h2 className="mt-1 text-2xl font-bold tracking-tight">Good morning, Yusuf</h2>
+                <h2 className="mt-1 text-2xl font-bold tracking-tight">Good morning, Mehdi Karoui</h2>
                 <p className="mt-1 text-sm text-muted-foreground">
                   4 active projects · 2 deployments today · all systems normal
                 </p>
