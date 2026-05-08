@@ -218,7 +218,7 @@ function DashboardPage() {
               <Plus className="h-4 w-4" /> New project
             </Link>
             <div className="h-9 w-9 rounded-full bg-gradient-to-br from-emerald-400 to-teal-600 ring-2 ring-border flex items-center justify-center text-[11px] font-semibold">
-              YU
+              MK
             </div>
           </div>
         </header>
