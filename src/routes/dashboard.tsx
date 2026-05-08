@@ -118,7 +118,7 @@ const team = [
   { name: "Sarah Chen", initials: "SC", color: "from-rose-500 to-amber-500" },
   { name: "Marco Lee", initials: "ML", color: "from-cyan-400 to-blue-600" },
   { name: "Priya Shah", initials: "PS", color: "from-violet-500 to-fuchsia-500" },
-  { name: "You", initials: "YU", color: "from-emerald-400 to-teal-600" },
+  { name: "Mehdi Karoui", initials: "MK", color: "from-emerald-400 to-teal-600" },
 ];
 
 function DashboardPage() {
@@ -218,7 +218,7 @@ function DashboardPage() {
               <Plus className="h-4 w-4" /> New project
             </Link>
             <div className="h-9 w-9 rounded-full bg-gradient-to-br from-emerald-400 to-teal-600 ring-2 ring-border flex items-center justify-center text-[11px] font-semibold">
-              YU
+              MK
             </div>
           </div>
         </header>
@@ -238,7 +238,7 @@ function DashboardPage() {
             <div className="relative flex flex-col md:flex-row md:items-center md:justify-between gap-4">
               <div>
                 <p className="text-xs uppercase tracking-wider text-cyan-accent font-semibold">Friday, May 8</p>
-                <h2 className="mt-1 text-2xl font-bold tracking-tight">Good morning, Yusuf</h2>
+                <h2 className="mt-1 text-2xl font-bold tracking-tight">Good morning, Mehdi Karoui</h2>
                 <p className="mt-1 text-sm text-muted-foreground">
                   4 active projects · 2 deployments today · all systems normal
                 </p>
@@ -597,7 +597,7 @@ function DashboardPage() {
                       <div>
                         <p className="text-sm font-medium leading-none">{m.name}</p>
                         <p className="mt-1 text-[11px] text-muted-foreground">
-                          {m.name === "You" ? "Owner" : "Editor"}
+                          {m.name === "Mehdi Karoui" ? "Owner" : "Editor"}
                         </p>
                       </div>
                     </div>
