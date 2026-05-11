@@ -92,7 +92,9 @@ Requirements:
 
   const extractHtml = (raw: string): string => {
     const fence = raw.match(/```(?:html)?\s*([\s\S]*?)```/i);
-    return (fence ? fence[1] : raw).trim();
+    const candidate = (fence ? fence[1] : raw).trim();
+    const docMatch = candidate.match(/<!DOCTYPE html[\s\S]*<\/html>/i);
+    return (docMatch ? docMatch[0] : candidate).trim();
   };
 
   const send = async (text: string) => {
