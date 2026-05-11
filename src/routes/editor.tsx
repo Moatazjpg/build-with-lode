@@ -31,6 +31,14 @@ const initialMessages: Message[] = [
 
 const quickSelects = ["SaaS Product", "Service Agency", "Personal Brand"];
 
+const loadingSteps = [
+  "Analyzing your project...",
+  "Building the structure...",
+  "Adding design...",
+  "Polishing the details...",
+  "Almost there...",
+];
+
 function EditorPage() {
   const [messages, setMessages] = useState<Message[]>(initialMessages);
   const [input, setInput] = useState("");
@@ -39,11 +47,21 @@ function EditorPage() {
   const [generatedHtml, setGeneratedHtml] = useState<string>("");
   const [isGenerating, setIsGenerating] = useState(false);
   const [genError, setGenError] = useState<string | null>(null);
+  const [stepIndex, setStepIndex] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
   }, [messages]);
+
+  useEffect(() => {
+    if (!isGenerating) return;
+    setStepIndex(0);
+    const id = setInterval(() => {
+      setStepIndex((i) => (i + 1) % loadingSteps.length);
+    }, 5000);
+    return () => clearInterval(id);
+  }, [isGenerating]);
 
   const generateFromOllama = async (prompt: string): Promise<string> => {
     const res = await fetch("http://localhost:11434/api/generate", {
