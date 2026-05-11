@@ -290,19 +290,45 @@ function EditorPage() {
                         "radial-gradient(60% 50% at 50% 30%, color-mix(in oklab, var(--brand) 18%, transparent), transparent 70%)",
                     }}
                   />
-                  <p className="relative text-2xl font-semibold text-foreground/60 md:text-3xl">
-                    {isGenerating ? (
-                      <>Generating your site<span className="animate-pulse">...</span></>
-                    ) : genError ? (
-                      <span className="text-red-400/80">{genError}</span>
-                    ) : (
-                      <>
-                        Your website preview
-                        <br />
-                        <span className="text-foreground/40">will appear here</span>
-                      </>
-                    )}
-                  </p>
+                  {isGenerating ? (
+                    <div className="relative flex flex-col items-center gap-6">
+                      <div className="relative h-16 w-16">
+                        <div className="absolute inset-0 rounded-full border-4 border-brand/20" />
+                        <div className="absolute inset-0 animate-spin rounded-full border-4 border-transparent border-t-brand" />
+                        <Sparkles className="absolute inset-0 m-auto h-6 w-6 text-brand animate-pulse" />
+                      </div>
+                      <p className="text-2xl font-semibold text-foreground/80 md:text-3xl">
+                        Generating your website
+                        <span className="animate-pulse">...</span>
+                      </p>
+                      <p
+                        key={stepIndex}
+                        className="animate-fade-in text-base font-medium text-foreground/60 md:text-lg"
+                      >
+                        {loadingSteps[stepIndex]}
+                      </p>
+                      <div className="flex gap-1.5">
+                        {loadingSteps.map((_, i) => (
+                          <span
+                            key={i}
+                            className={`h-1.5 rounded-full transition-all ${
+                              i === stepIndex ? "w-6 bg-brand" : "w-1.5 bg-border"
+                            }`}
+                          />
+                        ))}
+                      </div>
+                    </div>
+                  ) : genError ? (
+                    <p className="relative text-2xl font-semibold text-red-400/80 md:text-3xl">
+                      {genError}
+                    </p>
+                  ) : (
+                    <p className="relative text-2xl font-semibold text-foreground/60 md:text-3xl">
+                      Your website preview
+                      <br />
+                      <span className="text-foreground/40">will appear here</span>
+                    </p>
+                  )}
                 </div>
               )}
             </div>
