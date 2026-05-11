@@ -36,25 +36,60 @@ function EditorPage() {
   const [input, setInput] = useState("");
   const [selected, setSelected] = useState<string>("SaaS Product");
   const [device, setDevice] = useState<"desktop" | "mobile">("desktop");
+  const [generatedHtml, setGeneratedHtml] = useState<string>("");
+  const [isGenerating, setIsGenerating] = useState(false);
+  const [genError, setGenError] = useState<string | null>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
   }, [messages]);
 
-  const send = (text: string) => {
-    if (!text.trim()) return;
+  const generateFromOllama = async (prompt: string): Promise<string> => {
+    const res = await fetch("http://localhost:11434/api/generate", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        model: "deepseek-coder:6.7b",
+        prompt,
+        stream: false,
+      }),
+    });
+    if (!res.ok) throw new Error(`Ollama error: ${res.status}`);
+    const data = (await res.json()) as { response?: string };
+    return data.response ?? "";
+  };
+
+  const extractHtml = (raw: string): string => {
+    const fence = raw.match(/```(?:html)?\s*([\s\S]*?)```/i);
+    return (fence ? fence[1] : raw).trim();
+  };
+
+  const send = async (text: string) => {
+    if (!text.trim() || isGenerating) return;
     const next = messages.length + 1;
-    setMessages((m) => [
-      ...m,
-      { id: next, from: "user", text },
-      {
-        id: next + 1,
-        from: "ai",
-        text: "Nice — I've added that to your project. Let's keep going.",
-      },
-    ]);
+    setMessages((m) => [...m, { id: next, from: "user", text }]);
     setInput("");
+    setIsGenerating(true);
+    setGenError(null);
+    try {
+      const raw = await generateFromOllama(text);
+      const html = extractHtml(raw);
+      setGeneratedHtml(html);
+      setMessages((m) => [
+        ...m,
+        { id: next + 1, from: "ai", text: "Generated — check the preview on the right." },
+      ]);
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : "Failed to reach Ollama";
+      setGenError(msg);
+      setMessages((m) => [
+        ...m,
+        { id: next + 1, from: "ai", text: `⚠️ ${msg}. Make sure Ollama is running locally.` },
+      ]);
+    } finally {
+      setIsGenerating(false);
+    }
   };
 
   return (
@@ -221,21 +256,37 @@ function EditorPage() {
                   https://lode.ai/your-site
                 </div>
               </div>
-              {/* Empty preview */}
-              <div className="relative flex min-h-[520px] flex-1 items-center justify-center overflow-hidden bg-background px-6 py-20 text-center">
-                <div
-                  className="pointer-events-none absolute inset-0 opacity-50"
-                  style={{
-                    background:
-                      "radial-gradient(60% 50% at 50% 30%, color-mix(in oklab, var(--brand) 18%, transparent), transparent 70%)",
-                  }}
+              {generatedHtml ? (
+                <iframe
+                  title="Generated preview"
+                  srcDoc={generatedHtml}
+                  sandbox="allow-same-origin"
+                  className="min-h-[520px] w-full flex-1 bg-white"
                 />
-                <p className="relative text-2xl font-semibold text-foreground/60 md:text-3xl">
-                  Your website preview
-                  <br />
-                  <span className="text-foreground/40">will appear here</span>
-                </p>
-              </div>
+              ) : (
+                <div className="relative flex min-h-[520px] flex-1 items-center justify-center overflow-hidden bg-background px-6 py-20 text-center">
+                  <div
+                    className="pointer-events-none absolute inset-0 opacity-50"
+                    style={{
+                      background:
+                        "radial-gradient(60% 50% at 50% 30%, color-mix(in oklab, var(--brand) 18%, transparent), transparent 70%)",
+                    }}
+                  />
+                  <p className="relative text-2xl font-semibold text-foreground/60 md:text-3xl">
+                    {isGenerating ? (
+                      <>Generating your site<span className="animate-pulse">...</span></>
+                    ) : genError ? (
+                      <span className="text-red-400/80">{genError}</span>
+                    ) : (
+                      <>
+                        Your website preview
+                        <br />
+                        <span className="text-foreground/40">will appear here</span>
+                      </>
+                    )}
+                  </p>
+                </div>
+              )}
             </div>
           </div>
         </main>
