@@ -63,13 +63,25 @@ function EditorPage() {
     return () => clearInterval(id);
   }, [isGenerating]);
 
-  const generateFromOllama = async (prompt: string): Promise<string> => {
+  const buildPrompt = (userMessage: string) => `You are an expert web developer. Your ONLY job is to output complete, working HTML code. Never explain, never apologize, never add text before or after the code. Always start your response with <!DOCTYPE html> and end with </html>. No exceptions.
+
+Task: Create a complete single-file HTML page with embedded CSS for the following business: ${userMessage}
+
+Requirements:
+- Hero section with business name and tagline
+- Services or features section
+- Contact form
+- Professional design with modern CSS
+- All CSS must be inside a style tag in the head
+- Output ONLY the HTML code, nothing else`;
+
+  const generateFromOllama = async (userMessage: string): Promise<string> => {
     const res = await fetch("http://localhost:11434/api/generate", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         model: "deepseek-coder:6.7b",
-        prompt,
+        prompt: buildPrompt(userMessage),
         stream: false,
       }),
     });
@@ -80,7 +92,9 @@ function EditorPage() {
 
   const extractHtml = (raw: string): string => {
     const fence = raw.match(/```(?:html)?\s*([\s\S]*?)```/i);
-    return (fence ? fence[1] : raw).trim();
+    const candidate = (fence ? fence[1] : raw).trim();
+    const docMatch = candidate.match(/<!DOCTYPE html[\s\S]*<\/html>/i);
+    return (docMatch ? docMatch[0] : candidate).trim();
   };
 
   const send = async (text: string) => {
