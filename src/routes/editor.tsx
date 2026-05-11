@@ -256,21 +256,37 @@ function EditorPage() {
                   https://lode.ai/your-site
                 </div>
               </div>
-              {/* Empty preview */}
-              <div className="relative flex min-h-[520px] flex-1 items-center justify-center overflow-hidden bg-background px-6 py-20 text-center">
-                <div
-                  className="pointer-events-none absolute inset-0 opacity-50"
-                  style={{
-                    background:
-                      "radial-gradient(60% 50% at 50% 30%, color-mix(in oklab, var(--brand) 18%, transparent), transparent 70%)",
-                  }}
+              {generatedHtml ? (
+                <iframe
+                  title="Generated preview"
+                  srcDoc={generatedHtml}
+                  sandbox="allow-same-origin"
+                  className="min-h-[520px] w-full flex-1 bg-white"
                 />
-                <p className="relative text-2xl font-semibold text-foreground/60 md:text-3xl">
-                  Your website preview
-                  <br />
-                  <span className="text-foreground/40">will appear here</span>
-                </p>
-              </div>
+              ) : (
+                <div className="relative flex min-h-[520px] flex-1 items-center justify-center overflow-hidden bg-background px-6 py-20 text-center">
+                  <div
+                    className="pointer-events-none absolute inset-0 opacity-50"
+                    style={{
+                      background:
+                        "radial-gradient(60% 50% at 50% 30%, color-mix(in oklab, var(--brand) 18%, transparent), transparent 70%)",
+                    }}
+                  />
+                  <p className="relative text-2xl font-semibold text-foreground/60 md:text-3xl">
+                    {isGenerating ? (
+                      <>Generating your site<span className="animate-pulse">...</span></>
+                    ) : genError ? (
+                      <span className="text-red-400/80">{genError}</span>
+                    ) : (
+                      <>
+                        Your website preview
+                        <br />
+                        <span className="text-foreground/40">will appear here</span>
+                      </>
+                    )}
+                  </p>
+                </div>
+              )}
             </div>
           </div>
         </main>
