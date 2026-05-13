@@ -178,7 +178,7 @@ function EditorPage() {
             >
               <textarea
                 value={input}
-                onChange={(e) => setInput(e.target.value.slice(0, 200))}
+                onChange={(e) => setInput(e.target.value.slice(0, 1000))}
                 onKeyDown={(e) => {
                   if (e.key === "Enter" && !e.shiftKey) {
                     e.preventDefault();
