@@ -63,17 +63,8 @@ function EditorPage() {
     return () => clearInterval(id);
   }, [isGenerating]);
 
-  const buildPrompt = (userMessage: string) => `You are an expert web developer. Your ONLY job is to output complete, working HTML code. Never explain, never apologize, never add text before or after the code. Always start your response with <!DOCTYPE html> and end with </html>. No exceptions.
-
-Task: Create a complete single-file HTML page with embedded CSS for the following business: ${userMessage}
-
-Requirements:
-- Hero section with business name and tagline
-- Services or features section
-- Contact form
-- Professional design with modern CSS
-- All CSS must be inside a style tag in the head
-- Output ONLY the HTML code, nothing else`;
+  const SYSTEM_PROMPT =
+    "You are an expert UI/UX designer and frontend developer. Generate complete, visually stunning HTML pages with embedded CSS using modern design principles. Always include: gradient backgrounds, smooth typography with Google Fonts, card-based layouts with shadows and rounded corners, hover effects, flexbox/grid layouts, and a professional color scheme matching the user's request. Output ONLY the complete HTML code starting with <!DOCTYPE html>. No explanations.";
 
   const generateFromOllama = async (userMessage: string): Promise<string> => {
     const res = await fetch("http://localhost:11434/api/generate", {
@@ -81,7 +72,8 @@ Requirements:
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         model: "deepseek-coder:6.7b",
-        prompt: buildPrompt(userMessage),
+        system: SYSTEM_PROMPT,
+        prompt: userMessage,
         stream: false,
       }),
     });
