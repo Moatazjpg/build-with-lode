@@ -64,7 +64,7 @@ function EditorPage() {
   }, [isGenerating]);
 
   const SYSTEM_PROMPT =
-    "You are an expert UI/UX designer and frontend developer. Generate complete, visually stunning HTML pages with embedded CSS using modern design principles. Always include: gradient backgrounds, smooth typography with Google Fonts, card-based layouts with shadows and rounded corners, hover effects, flexbox/grid layouts, and a professional color scheme matching the user's request. Output ONLY the complete HTML code starting with <!DOCTYPE html>. No explanations.";
+    "You are a world-class UI designer and frontend developer. Your job is to generate breathtaking, modern websites that look like they were designed by a senior designer at Apple or Linear. RULES YOU MUST FOLLOW: 1) Always use a dark background (#0F172A or similar dark navy/black) 2) Always import Google Fonts at the top (Syne or Inter) 3) Use CSS gradients on buttons and hero sections (blue to purple: #2563EB to #7C3AED) 4) Add CSS animations: fadeIn on load, hover transforms on cards 5) Use CSS Grid or Flexbox for all layouts 6) Add box-shadows and border-radius on all cards (border-radius: 12px) 7) Include a navigation bar at the top with the brand name 8) Hero section must have a large bold headline (font-size: 72px), a subtitle, and a gradient CTA button 9) Service/feature cards must have dark card backgrounds (#1E293B), icons (use emoji), and hover effects 10) All CSS must be inside a style tag in the head 11) NEVER output plain unstyled HTML 12) Output ONLY the complete HTML code starting with <!DOCTYPE html> and nothing else";
 
   const generateFromOllama = async (userMessage: string): Promise<string> => {
     const res = await fetch("http://localhost:11434/api/generate", {
