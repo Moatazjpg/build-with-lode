@@ -178,7 +178,7 @@ function EditorPage() {
             >
               <textarea
                 value={input}
-                onChange={(e) => setInput(e.target.value.slice(0, 200))}
+                onChange={(e) => setInput(e.target.value.slice(0, 1000))}
                 onKeyDown={(e) => {
                   if (e.key === "Enter" && !e.shiftKey) {
                     e.preventDefault();
@@ -198,7 +198,7 @@ function EditorPage() {
                 <Send className="h-4 w-4" />
               </button>
               <span className="absolute bottom-3 left-4 text-[10px] text-muted-foreground">
-                {input.length}/200
+                {input.length}/1000
               </span>
             </form>
 
