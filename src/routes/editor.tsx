@@ -106,7 +106,7 @@ function EditorPage() {
     setIsGenerating(true);
     setGenError(null);
     try {
-      const raw = await generateFromOllama(text);
+      const raw = await generateFromOpenCode(text);
       const html = extractHtml(raw);
       setGeneratedHtml(html);
       setMessages((m) => [
