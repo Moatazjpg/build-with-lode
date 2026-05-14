@@ -114,11 +114,11 @@ function EditorPage() {
         { id: next + 1, from: "ai", text: "Generated — check the preview on the right." },
       ]);
     } catch (err) {
-      const msg = err instanceof Error ? err.message : "Failed to reach Ollama";
+      const msg = "Failed to connect to AI. Make sure OpenCode is running on port 4000.";
       setGenError(msg);
       setMessages((m) => [
         ...m,
-        { id: next + 1, from: "ai", text: `⚠️ ${msg}. Make sure Ollama is running locally.` },
+        { id: next + 1, from: "ai", text: `⚠️ ${msg}` },
       ]);
     } finally {
       setIsGenerating(false);
