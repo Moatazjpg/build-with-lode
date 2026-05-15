@@ -96,7 +96,7 @@ function EditorPage() {
     setIsGenerating(true);
     setGenError(null);
     try {
-      const raw = await generateFromOpenCode(text);
+      const raw = await generateFromOllama(text);
       const html = extractHtml(raw);
       setGeneratedHtml(html);
       setMessages((m) => [
@@ -104,7 +104,7 @@ function EditorPage() {
         { id: next + 1, from: "ai", text: "Generated — check the preview on the right." },
       ]);
     } catch (err) {
-      const msg = "Failed to connect to AI. Make sure OpenCode is running on port 4000.";
+      const msg = "Failed to connect to AI. Make sure Ollama is running on port 11434.";
       setGenError(msg);
       setMessages((m) => [
         ...m,
