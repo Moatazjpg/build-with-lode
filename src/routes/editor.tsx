@@ -72,7 +72,8 @@ function EditorPage() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         model: "deepseek-coder:6.7b",
-        prompt: SYSTEM_PROMPT + "\n\n" + userMessage,
+        system: SYSTEM_PROMPT,
+        prompt: userMessage,
         stream: false,
       }),
     });
@@ -104,11 +105,11 @@ function EditorPage() {
         { id: next + 1, from: "ai", text: "Generated — check the preview on the right." },
       ]);
     } catch (err) {
-      const msg = "Failed to connect to AI. Make sure Ollama is running on port 11434.";
+      const msg = err instanceof Error ? err.message : "Failed to reach Ollama";
       setGenError(msg);
       setMessages((m) => [
         ...m,
-        { id: next + 1, from: "ai", text: `⚠️ ${msg}` },
+        { id: next + 1, from: "ai", text: `⚠️ ${msg}. Make sure Ollama is running locally.` },
       ]);
     } finally {
       setIsGenerating(false);
@@ -177,7 +178,7 @@ function EditorPage() {
             >
               <textarea
                 value={input}
-                onChange={(e) => setInput(e.target.value.slice(0, 1000))}
+                onChange={(e) => setInput(e.target.value.slice(0, 200))}
                 onKeyDown={(e) => {
                   if (e.key === "Enter" && !e.shiftKey) {
                     e.preventDefault();
@@ -197,7 +198,7 @@ function EditorPage() {
                 <Send className="h-4 w-4" />
               </button>
               <span className="absolute bottom-3 left-4 text-[10px] text-muted-foreground">
-                {input.length}/1000
+                {input.length}/200
               </span>
             </form>
 
