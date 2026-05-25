@@ -13,4 +13,7 @@ export default defineConfig({
     tsconfigPaths(),
     cloudflare(),
   ],
+  optimizeDeps: {
+    exclude: ["@tanstack/react-start"],
+  },
 });
