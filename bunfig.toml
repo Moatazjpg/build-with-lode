@@ -1,2 +1,4 @@
+# This project uses npm for dependency management.
+# Delete package-lock.json and run `bun install` if you prefer bun.
 [install]
 saveTextLockfile = false
