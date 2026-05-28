@@ -1,0 +1,144 @@
+{
+  "schema_version": "1.0.0",
+  "title": "Create a mobile signup screen with email + social login, clean/modern",
+  "description": "TypeUI artifact from Minimal skill",
+  "platform": "mobile",
+  "root": {
+    "type": "root",
+    "props": {
+      "layout": "vertical",
+      "platform": "mobile"
+    },
+    "children": [
+      {
+        "type": "Header",
+        "props": {
+          "name": "Header",
+          "source": "detected"
+        },
+        "children": [],
+        "tokens": {}
+      },
+      {
+        "type": "Hero",
+        "props": {
+          "name": "Hero",
+          "source": "detected"
+        },
+        "children": [],
+        "tokens": {}
+      },
+      {
+        "type": "FeaturesSection",
+        "props": {
+          "name": "FeaturesSection",
+          "source": "detected"
+        },
+        "children": [],
+        "tokens": {}
+      },
+      {
+        "type": "Grid",
+        "props": {
+          "name": "Grid",
+          "source": "detected"
+        },
+        "children": [],
+        "tokens": {}
+      },
+      {
+        "type": "Card_1",
+        "props": {
+          "name": "Card_1",
+          "source": "detected"
+        },
+        "children": [],
+        "tokens": {}
+      },
+      {
+        "type": "Card_2",
+        "props": {
+          "name": "Card_2",
+          "source": "detected"
+        },
+        "children": [],
+        "tokens": {}
+      },
+      {
+        "type": "Card_3",
+        "props": {
+          "name": "Card_3",
+          "source": "detected"
+        },
+        "children": [],
+        "tokens": {}
+      },
+      {
+        "type": "ButtonGroup",
+        "props": {
+          "name": "ButtonGroup",
+          "source": "detected"
+        },
+        "children": [],
+        "tokens": {}
+      },
+      {
+        "type": "Footer",
+        "props": {
+          "name": "Footer",
+          "source": "detected"
+        },
+        "children": [],
+        "tokens": {}
+      }
+    ],
+    "tokens": {}
+  },
+  "design_tokens": {
+    "colors": {
+      "primary": "#000000",
+      "secondary": "#666666",
+      "surface": "#FFFFFF",
+      "text": "#111111"
+    },
+    "typography": {
+      "primary": "Inter",
+      "display": "Inter",
+      "mono": "JetBrains Mono",
+      "scale": [
+        12,
+        14,
+        16,
+        20,
+        24,
+        32,
+        40
+      ]
+    },
+    "spacing": {
+      "scale": [
+        8,
+        16,
+        24,
+        32,
+        48,
+        64,
+        96
+      ]
+    },
+    "style": "minimal"
+  },
+  "meta": {
+    "generated_at": 1779930497.7401085,
+    "prompt": "Create a mobile signup screen with email + social login, clean/modern",
+    "intent": "auth",
+    "mood": "minimal",
+    "components_requested": [
+      "form"
+    ],
+    "style_keywords": [
+      "modern",
+      "minimal"
+    ]
+  }
+}

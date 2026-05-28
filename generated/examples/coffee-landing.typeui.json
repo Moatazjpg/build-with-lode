@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.0.0",
+  "title": "Create a landing page for a coffee roastery in Brooklyn",
+  "description": "TypeUI artifact from Clean skill",
+  "platform": "desktop",
+  "root": {
+    "type": "root",
+    "props": {
+      "layout": "vertical",
+      "platform": "desktop"
+    },
+    "children": [
+      {
+        "type": "Header",
+        "props": { "name": "Header", "source": "detected" },
+        "tokens": { "primary": "#3B82F6", "secondary": "#8B5CF6" }
+      },
+      {
+        "type": "Hero",
+        "props": { "name": "Hero", "source": "detected" },
+        "tokens": { "primary": "#3B82F6", "secondary": "#8B5CF6" }
+      },
+      {
+        "type": "FeaturesSection",
+        "props": { "name": "FeaturesSection", "source": "detected" },
+        "tokens": { "primary": "#3B82F6" }
+      },
+      {
+        "type": "Grid",
+        "props": { "name": "Grid", "source": "detected" },
+        "tokens": { "primary": "#3B82F6" }
+      },
+      {
+        "type": "ButtonGroup",
+        "props": { "name": "ButtonGroup", "source": "detected" },
+        "tokens": { "primary": "#3B82F6" }
+      },
+      {
+        "type": "Footer",
+        "props": { "name": "Footer", "source": "detected" },
+        "tokens": { "primary": "#3B82F6" }
+      }
+    ]
+  },
+  "design_tokens": {
+    "colors": {
+      "primary": "#3B82F6",
+      "secondary": "#8B5CF6",
+      "success": "#16A34A",
+      "warning": "#D97706",
+      "danger": "#DC2626",
+      "surface": "#FFFFFF",
+      "text": "#111827"
+    },
+    "typography": { "primary": "Inter" },
+    "spacing": { "scale": [8, 16] },
+    "style": "clean"
+  },
+  "meta": {
+    "generated_at": "2026-05-28T02:00:00",
+    "prompt": "Create a landing page for a coffee roastery in Brooklyn",
+    "intent": "landing-page",
+    "mood": "professional",
+    "components_requested": ["hero", "card"],
+    "style_keywords": ["clean"]
+  }
+}

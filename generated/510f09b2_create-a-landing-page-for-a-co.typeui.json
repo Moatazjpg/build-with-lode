@@ -1,0 +1,140 @@
+{
+  "schema_version": "1.0.0",
+  "title": "Create a landing page for a coffee roastery",
+  "description": "TypeUI artifact from Modern skill",
+  "platform": "desktop",
+  "root": {
+    "type": "root",
+    "props": {
+      "layout": "vertical",
+      "platform": "desktop"
+    },
+    "children": [
+      {
+        "type": "Header",
+        "props": {
+          "name": "Header",
+          "source": "detected"
+        },
+        "children": [],
+        "tokens": {}
+      },
+      {
+        "type": "Hero",
+        "props": {
+          "name": "Hero",
+          "source": "detected"
+        },
+        "children": [],
+        "tokens": {}
+      },
+      {
+        "type": "FeaturesSection",
+        "props": {
+          "name": "FeaturesSection",
+          "source": "detected"
+        },
+        "children": [],
+        "tokens": {}
+      },
+      {
+        "type": "Grid",
+        "props": {
+          "name": "Grid",
+          "source": "detected"
+        },
+        "children": [],
+        "tokens": {}
+      },
+      {
+        "type": "Card_1",
+        "props": {
+          "name": "Card_1",
+          "source": "detected"
+        },
+        "children": [],
+        "tokens": {}
+      },
+      {
+        "type": "Card_2",
+        "props": {
+          "name": "Card_2",
+          "source": "detected"
+        },
+        "children": [],
+        "tokens": {}
+      },
+      {
+        "type": "Card_3",
+        "props": {
+          "name": "Card_3",
+          "source": "detected"
+        },
+        "children": [],
+        "tokens": {}
+      },
+      {
+        "type": "ButtonGroup",
+        "props": {
+          "name": "ButtonGroup",
+          "source": "detected"
+        },
+        "children": [],
+        "tokens": {}
+      },
+      {
+        "type": "Footer",
+        "props": {
+          "name": "Footer",
+          "source": "detected"
+        },
+        "children": [],
+        "tokens": {}
+      }
+    ],
+    "tokens": {}
+  },
+  "design_tokens": {
+    "colors": {
+      "primary": "#553F83",
+      "secondary": "#111111",
+      "success": "#16A34A",
+      "warning": "#D97706",
+      "danger": "#DC2626",
+      "surface": "#553F83",
+      "text": "#ffffff"
+    },
+    "typography": {
+      "primary": "IBM Plex Serif",
+      "display": "IBM Plex Serif",
+      "mono": "JetBrains Mono",
+      "scale": [
+        12,
+        14,
+        16,
+        20,
+        24,
+        32
+      ]
+    },
+    "spacing": {
+      "scale": [
+        4,
+        8,
+        12,
+        16,
+        24,
+        32
+      ]
+    },
+    "style": "modern"
+  },
+  "meta": {
+    "generated_at": 1779930497.2502332,
+    "prompt": "Create a landing page for a coffee roastery",
+    "intent": "landing-page",
+    "mood": "professional",
+    "components_requested": [],
+    "style_keywords": []
+  }
+}

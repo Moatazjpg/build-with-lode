@@ -1,35 +1,11 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
 
-node_modules
-dist
-dist-ssr
-.output
-.vinxi
-.tanstack/**
-.nitro
-*.local
+# Generated artifacts are tracked by design
+# generated/
 
-# Wrangler / Cloudflare
-.wrangler/
-.dev.vars
-
-# Bun lockfile (optional — npm is the primary package manager)
-bun.lockb
-
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
-.DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+# Node
+node_modules/

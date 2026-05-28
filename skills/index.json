@@ -1,0 +1,189 @@
+{
+  "$schema": "./schema.json",
+  "version": "1.0.0",
+  "description": "Combined skill index for lode UI generation improvement",
+  "sources": {
+    "open-design": "https://github.com/nexu-io/open-design",
+    "awesome-design-skills": "https://github.com/bergside/awesome-design-skills",
+    "typeui": "https://github.com/bergside/typeui"
+  },
+  "skills": {
+    "modern": {
+      "slug": "modern",
+      "name": "Modern",
+      "source": "awesome-design-skills",
+      "path": "skills/awesome-design-skills/modern/SKILL.md",
+      "description": "Contemporary editorial style with serif typography, minimal palettes, and clean layouts",
+      "tokens": {
+        "primary": "#553F83",
+        "secondary": "#111111",
+        "success": "#16A34A",
+        "warning": "#D97706",
+        "danger": "#DC2626",
+        "surface": "#553F83",
+        "text": "#ffffff"
+      },
+      "typography": {
+        "primary": "IBM Plex Serif",
+        "display": "IBM Plex Serif",
+        "mono": "JetBrains Mono",
+        "scale": [12, 14, 16, 20, 24, 32]
+      },
+      "spacing": [4, 8, 12, 16, 24, 32],
+      "scenario": "design"
+    },
+    "clean": {
+      "slug": "clean",
+      "name": "Clean",
+      "source": "awesome-design-skills",
+      "path": "skills/awesome-design-skills/clean/SKILL.md",
+      "description": "Simplicity-focused design with ample whitespace, legible typography, and limited color palette",
+      "tokens": {
+        "primary": "#3B82F6",
+        "secondary": "#8B5CF6",
+        "success": "#16A34A",
+        "warning": "#D97706",
+        "danger": "#DC2626",
+        "surface": "#FFFFFF",
+        "text": "#111827"
+      },
+      "typography": {
+        "primary": "Roboto",
+        "display": "Poppins",
+        "mono": "Inconsolata",
+        "scale": [12, 14, 16, 20, 24, 32]
+      },
+      "spacing": [8, 16, 24, 32, 48, 64],
+      "scenario": "design"
+    },
+    "minimal": {
+      "slug": "minimal",
+      "name": "Minimal",
+      "source": "awesome-design-skills",
+      "path": "skills/awesome-design-skills/minimal/SKILL.md",
+      "description": "Reduced visual elements, maximum whitespace, focus on content hierarchy",
+      "tokens": {
+        "primary": "#000000",
+        "secondary": "#666666",
+        "surface": "#FFFFFF",
+        "text": "#111111"
+      },
+      "typography": {
+        "primary": "Inter",
+        "display": "Inter",
+        "mono": "JetBrains Mono",
+        "scale": [12, 14, 16, 20, 24, 32, 40]
+      },
+      "spacing": [8, 16, 24, 32, 48, 64, 96],
+      "scenario": "design"
+    },
+    "shadcn": {
+      "slug": "shadcn",
+      "name": "Shadcn",
+      "source": "awesome-design-skills",
+      "path": "skills/awesome-design-skills/shadcn/SKILL.md",
+      "description": "Modern component-based UI with shadcn/ui principles — accessible, composable, utility-first",
+      "tokens": {
+        "primary": "#18181B",
+        "secondary": "#F4F4F5",
+        "surface": "#FFFFFF",
+        "text": "#09090B"
+      },
+      "typography": {
+        "primary": "Inter",
+        "display": "Inter",
+        "mono": "JetBrains Mono",
+        "scale": [12, 14, 16, 18, 20, 24, 30, 36]
+      },
+      "spacing": [4, 8, 12, 16, 24, 32, 40, 48],
+      "scenario": "design"
+    },
+    "dashboard": {
+      "slug": "dashboard",
+      "name": "Dashboard",
+      "source": "awesome-design-skills",
+      "path": "skills/awesome-design-skills/dashboard/SKILL.md",
+      "description": "Admin dashboard and data-dense interface design patterns",
+      "tokens": {
+        "primary": "#6366F1",
+        "secondary": "#1E293B",
+        "success": "#22C55E",
+        "warning": "#F59E0B",
+        "danger": "#EF4444",
+        "surface": "#0F172A",
+        "text": "#F8FAFC"
+      },
+      "typography": {
+        "primary": "Inter",
+        "display": "Inter",
+        "mono": "JetBrains Mono",
+        "scale": [11, 12, 14, 16, 20, 24, 30]
+      },
+      "spacing": [4, 8, 12, 16, 24, 32],
+      "scenario": "operation"
+    },
+    "corporate": {
+      "slug": "corporate",
+      "name": "Corporate",
+      "source": "awesome-design-skills",
+      "path": "skills/awesome-design-skills/corporate/SKILL.md",
+      "description": "Professional, trustworthy design for business and enterprise applications",
+      "tokens": {
+        "primary": "#2563EB",
+        "secondary": "#1E40AF",
+        "surface": "#FFFFFF",
+        "text": "#0F172A"
+      },
+      "typography": {
+        "primary": "Inter",
+        "display": "Inter",
+        "mono": "JetBrains Mono",
+        "scale": [12, 14, 16, 18, 20, 24, 30]
+      },
+      "spacing": [8, 16, 24, 32, 48],
+      "scenario": "design"
+    },
+    "editorial": {
+      "slug": "editorial",
+      "name": "Editorial",
+      "source": "awesome-design-skills",
+      "path": "skills/awesome-design-skills/editorial/SKILL.md",
+      "description": "Magazine-style editorial design with rich typography and narrative layouts",
+      "tokens": {
+        "primary": "#1A1A2E",
+        "secondary": "#E94560",
+        "surface": "#FAFAFA",
+        "text": "#1A1A2E"
+      },
+      "typography": {
+        "primary": "Playfair Display",
+        "display": "Playfair Display",
+        "mono": "IBM Plex Mono",
+        "scale": [14, 16, 20, 26, 36, 48, 60]
+      },
+      "spacing": [8, 16, 24, 40, 64, 96],
+      "scenario": "marketing"
+    },
+    "bento": {
+      "slug": "bento",
+      "name": "Bento",
+      "source": "awesome-design-skills",
+      "path": "skills/awesome-design-skills/bento/SKILL.md",
+      "description": "Bento-grid layout design with modular card-based content organization",
+      "tokens": {
+        "primary": "#0F172A",
+        "secondary": "#38BDF8",
+        "surface": "#F8FAFC",
+        "text": "#0F172A"
+      },
+      "typography": {
+        "primary": "Inter",
+        "display": "Inter",
+        "mono": "JetBrains Mono",
+        "scale": [12, 14, 16, 20, 24, 32]
+      },
+      "spacing": [4, 8, 12, 16, 24, 32],
+      "scenario": "design"
+    }
+  }
+}
