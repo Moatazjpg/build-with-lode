@@ -11,7 +11,7 @@ export default defineConfig({
     tailwindcss(),
     react(),
     tsconfigPaths(),
-    cloudflare(),
+    cloudflare({ viteEnvironment: { name: "ssr" } }),
   ],
   optimizeDeps: {
     exclude: ["@tanstack/react-start", "@tanstack/react-start/server-entry"],
