@@ -14,6 +14,6 @@ export default defineConfig({
     cloudflare(),
   ],
   optimizeDeps: {
-    exclude: ["@tanstack/react-start"],
+    exclude: ["@tanstack/react-start", "@tanstack/react-start/server-entry"],
   },
 });
